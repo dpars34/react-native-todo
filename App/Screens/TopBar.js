@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
 
     topFont: {
-        color: '#eeae00',
+        color: '#f7a206',
         fontSize: 30,
     },
 

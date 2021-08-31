@@ -1,19 +1,22 @@
 import React from 'react';
-import { Text, StyleSheet, SafeAreaView } from 'react-native';
+import { Text, StyleSheet, SafeAreaView, ScrollView } from 'react-native';
 
 import SingleTodo from './SingleTodo'
 import TopBar from './TopBar'
 
-function MainScreen( { todoItems, addTodo } ) {
+function MainScreen( { todoItems, addTodo, deleteTodo } ) {
     return (
         <SafeAreaView style={styles.mainView}>
             <TopBar addTodo={addTodo}/>
 
-            {todoItems.map((todo) => {
-                return(
-                    <SingleTodo text={todo} />
-                ) 
-            })}
+            <ScrollView style={styles.scrollView}>
+                {todoItems.map((todo, index) => {
+                    return(
+                        <SingleTodo key={index} index={index} text={todo} deleteTodo={deleteTodo}/>
+                    ) 
+                })}
+            </ScrollView>
+
         </SafeAreaView>
             
     );
@@ -26,8 +29,12 @@ const styles = StyleSheet.create({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor: '#eeebeb'
+        backgroundColor: '#eeebeb',
     },
+
+    scrollView: {
+        width: '100%'
+    }
 
     
 })

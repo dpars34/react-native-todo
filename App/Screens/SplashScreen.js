@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#eeae00'
+        backgroundColor: '#f7a206'
     },
 
     splashText: {
